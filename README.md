@@ -3,14 +3,14 @@
 ### Steps to setup
 0. Go to the folder where you want to create your project
 1. Create virtual environmnet
-  * virtualenv -p python3 .
+    * virtualenv -p python3 .
 
 2. Activate the virtual environment 
-  * source ./bin/activate
+    * source ./bin/activate
 
 3. Install the django version we are going to use
-  * pip install django=2.0.7
-  * This isn't the latest version, but it's the one I'm going to use. I will update this version later on
+    * pip install django=2.0.7
+    * This isn't the latest version, but it's the one I'm going to use. I will update this version later on
 
 
 ### Creating a sample project
@@ -46,18 +46,18 @@ STATIC\_URL = where you store your CSS and javascript.
 
 Side Note 
 *  To prevent the initial error when running the server for the first time (i.e.  python manage.py runserver), run:
-  *  python manage.py migrate
-  *  This will sync django and the database
+    *  python manage.py migrate
+    *  This will sync django and the database
 
 ### Built-in Apps and some more setup steps you should definately do
 Apps here are basically components of the general django project. You would add them in the INTALLED\_APPS variable inside the settings file. 
 *  Create the admin user
-  * Double-check that "python manage.py migrate" runs without errors
-  * python manage.py createsuperuser
+    * Double-check that "python manage.py migrate" runs without errors
+    * python manage.py createsuperuser
 
 ### My first custom app(django component) 
 You will want to run this code to create your new app:
-python manage.py startapp [name]
-python manage.py startapp incirep
+  python manage.py startapp [name]
+  python manage.py startapp ogreporting
 Remember that apps should be very narrow and focus on specific components. An app shouldn't have to handle too many things, and for example a car app should have nothing to do with the sales app.
 
