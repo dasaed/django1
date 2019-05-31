@@ -49,3 +49,15 @@ Side Note
   *  python manage.py migrate
   *  This will sync django and the database
 
+### Built-in Apps and some more setup steps you should definately do
+Apps here are basically components of the general django project. You would add them in the INTALLED\_APPS variable inside the settings file. 
+*  Create the admin user
+  * Double-check that "python manage.py migrate" runs without errors
+  * python manage.py createsuperuser
+
+### My first custom app(django component) 
+You will want to run this code to create your new app:
+python manage.py startapp [name]
+python manage.py startapp incirep
+Remember that apps should be very narrow and focus on specific components. An app shouldn't have to handle too many things, and for example a car app should have nothing to do with the sales app.
+
