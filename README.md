@@ -106,8 +106,11 @@ Creating your new app:
 
 1. We go back to our product root directory(ie. where the manage.py file is) and run:
     python manage.py shell
-And now we can run commands like:
-    from ogreporting.models import Report
+This shell allows us to run python, as well as certain built in django commands as well, like:
+
+from ogreporting.models import Report
+Report.objects.all() # Shows how many Report objects we have created in the database
+Report.objects.create(title='Broken Pipeline', description='boat crashed into pipeline',severity='severe',reporter='Jane Doe')
 
 
 
