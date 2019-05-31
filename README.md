@@ -56,8 +56,74 @@ Apps here are basically components of the general django project. You would add 
     * python manage.py createsuperuser
 
 ### My first custom app(django component) 
-You will want to run this code to create your new app:
-  python manage.py startapp [name]
-  python manage.py startapp ogreporting
 Remember that apps should be very narrow and focus on specific components. An app shouldn't have to handle too many things, and for example a car app should have nothing to do with the sales app.
+Creating your new app:
+1. python manage.py startapp [name]
+    1.1  python manage.py startapp ogreporting
+2. Go to the projects folder and edit the models.py file
+    2.1  cd [name]
+    2.2  vi models.py
+        This is what models.py looks like at this point
+        from django.db import models
+        
+        \# Create your models here.
+        class Report(models.Model):
+            title = models.TextField()
+            description = models.TextField()
+            severity = models.TextField()
+
+3. Go to settings.py and add your new app, so that the INSTALLED\_APPS variable should look like this:
+        INSTALLED\_APPS = [
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+        
+            # Third party apps
+        
+            # My own apps
+            'ogreporting'
+        ]
+
+4. Run the following commands to save the changes to your project 
+        python manage.py makemigrations
+        python manage.py migrate
+
+5. Register your models in the admin.py
+        vi django1/src/ogreporting/admin.py 
+        from django.contrib import admin
+        
+        # Register your models here.
+        from .models import Report
+
+        admin.site.register(Report)
+
+### At this point, we basically got a very basic product working :D
+
+### Create Product Objects in the Python Shell
+
+1. We go back to our product root directory(ie. where the manage.py file is) and run:
+    python manage.py shell
+And now we can run commands like:
+    from ogreporting.models import Report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
